@@ -1,0 +1,31 @@
+ var
+  sentence: string;
+  char_count, word_count, vowel_count, i: integer;
+  c: char;
+
+ begin
+  char_count := 0;
+  word_count := 0;
+  vowel_count := 0;
+
+  writeln(Enter a sentence ending with a period:);
+  readln(sentence);
+
+  for i := 1 to length(sentence) do
+  begin
+    c := sentence[i];
+    char_count := char_count + 1;
+
+    if c = ' ' then
+      word_count := word_count + 1;
+
+    if c in ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'] then
+      vowel_count := vowel_count + 1;
+  end;
+
+  word_count := word_count + 1; { Account for the last word }
+
+  writeln( Length of the sentence: , char_count,  characters);
+  writeln( Number of words in the sentence: , word_count);
+  writeln( Number of vowels in the sentence: , vowel_count);
+ end.
